@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { parseISO, format, intervalToDuration } from 'date-fns'
 import Base from '../layouts/Base'
 import { ButtonPrimary } from '../components/ButtonPrimary'
-import Pronunciation from '../components/Pronunciation'
 import Toast from '../components/Toast'
 import stripHtml from '../lib/strip-html'
 import items from '../data/about'
@@ -17,7 +16,7 @@ export async function getStaticProps() {
   const meta = {
     title: 'About // Aryan Kumar',
     description:
-      "Zeno Rocha is a Brazilian creator and programmer. He currently lives in San Francisco, California, where he's the Founder & CEO at Resend. His lifelong appreciation for building software and sharing knowledge led him to speak in over 110 conferences worldwide. His passion for open source put him on the top 20 most active users on GitHub at age 22. Before moving to the US, Zeno developed multiple applications, mentored startups, and worked at major companies in Latin America, such as Globo and Petrobras.",
+      "Aryan Kumar is an Indian software developer currently serving as a Backend Developer at Engineer's Cradle. He gained recognition for creating CheckValorant, a viral app that received a cease-and-desist from Riot Games. Previously leading the Web Team at Google Developer Student Club LPU, he specializes in backend development and cyber security while pursuing his Computer Science degree from Lovely Professional University.",
     tagline: 'Create. Share. Repeat.',
     image: '/static/images/about-bw.jpg',
     primaryColor: 'pink',
@@ -38,7 +37,7 @@ function About(props) {
   const renderIntro = () => {
     return (
       <Container>
-        <Section>
+        {/* <Section>
           <Image
             alt="Zeno"
             src="/static/images/avatar.jpg"
@@ -48,7 +47,7 @@ function About(props) {
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAP0lEQVQImQE0AMv/AFBQUJKSkqmpqaOjowCurq7v7+/Jycm5ubkA////jIyMn5+fg4ODADAwMD09PWlpaQAAAApRGnEHblMWAAAAAElFTkSuQmCC"
             priority
           />
-        </Section>
+        </Section> */}
         <Section>
           <Paragraph
             css={{
@@ -57,21 +56,20 @@ function About(props) {
             }}
           >
             <strong>Hey, I'm Aryan Kumar</strong>.
-            <Pronunciation />
-            <br />
-            I started as a software engineer back in 2009, working with Flash.
+            I write code, play games, and discuss them.
           </Paragraph>
           <Paragraph>
-            I'm the <strong>Founder & CEO</strong> at
-            Resend. Before that, I was a VP of Developer Experience at WorkOS and CPO at Liferay Cloud. I'm originally
-            from Brazil and now living in{' '}
-            <strong>San Francisco, California</strong> with my amazing wife and
-            beautiful daughter.
+          I created the viral app <strong>CheckValorant</strong>, 
+          which used to provide in-game insights about Valorant. It
+          got so popular that Riot Games literally sent a cease and 
+          desist notice (I guess I made it <i>too</i> good 😅). <br></br>
+          I am passionate about <strong>backend 
+          development, and cyber security</strong>.
           </Paragraph>
           <Paragraph>
-            <strong>I love dark mode</strong>, open source, and side projects.
-            When I'm not working, I like running, watching movies, and{' '}
-            <strong>eating cheese</strong>.
+          Off the clock, you'll catch me <strong>RICEing my Arch</strong>, 
+          missing easy shots at <strong>pool</strong> (but having fun anyway), 
+          and yelling at the TV during <strong>F1 races and cricket matches</strong>.
           </Paragraph>
         </Section>
       </Container>
@@ -85,8 +83,7 @@ function About(props) {
     return (
       <div>
         <p>
-          This is made for journalists, podcast hosts, and event organizers to
-          copy-and-paste.
+          Alright, here is a more formal version for people to copy-paste.
         </p>
         <blockquote>
           <p>{description}</p>
@@ -114,7 +111,7 @@ function About(props) {
             onMouseLeave={() => downloadRef.current?.stop()}
           >
             <Lottie lottieRef={downloadRef} style={iconStyle} animationData={downloadIcon} loop={false} autoplay={false} />
-            Download Headshot
+            Download Resume
           </ButtonPrimary>
         </ButtonsContainer>
       </div>
@@ -231,7 +228,7 @@ const ButtonsContainer = styled('p', {
 const Section = styled('div', {
   marginTop: '0px',
   width: 'auto',
-  '@bp2': { width: '48%' },
+  '@bp2': { width: '100%' },
 })
 
 About.Layout = Base
